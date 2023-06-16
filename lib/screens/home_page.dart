@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
+
+//Widgets
+import '../home_page/categories_container.dart';
+
+//Providers
+import '../providers/user_provider.dart';
 
 class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final userData = Provider.of<UserProvider>(context, listen: false);
+    final user = userData.user;
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(0, 0, 0, 0),
@@ -57,38 +67,75 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          testContainer(Colors.red, 'ahdsfhkahksh'),
-          testContainer(Colors.black, 'asd'),
-          testContainer(Colors.blue, 'ahdsfhasdfasdfasdfkahksh'),
-          testContainer(Colors.yellow, 'adf'),
-          testContainer(Colors.orange, 'ahdsfhkassdahksh'),
-          testContainer(Colors.green, 'ahdsfhkadsfadsfahksh'),
+          const SizedBox(height: 10),
+          SizedBox(
+            height: 40,
+            child: ListView(
+              scrollDirection: Axis.horizontal,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              children: [
+                CategoriesContainer(
+                    color: Colors.yellow, title: 'Cosplayer', isActive: true),
+                CategoriesContainer(
+                    color: Colors.red, title: 'Streamer', isActive: false),
+                CategoriesContainer(
+                    color: Colors.blue, title: 'Movies', isActive: false),
+                CategoriesContainer(
+                    color: Colors.blue, title: 'Cosplay', isActive: false),
+              ],
+            ),
+          ),
+          const SizedBox(height: 20),
+          SizedBox(
+            height: 130,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                itemCount: user.length,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Container(
+                          height: 70,
+                          width: 70,
+                          decoration: BoxDecoration(
+                            border:
+                                Border.all(color: Colors.transparent, width: 2),
+                            borderRadius: BorderRadius.circular(100),
+                            color: Colors.green,
+                          ),
+                          child: CircleAvatar(
+                            backgroundColor: Colors.white,
+                            child: Padding(
+                              padding: const EdgeInsets.all(2),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(100),
+                                child: Image.network(
+                                  user[index].userImageUrl,
+                                  fit: BoxFit.cover,
+                                  height: 70,
+                                  width: 70,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 6),
+                      Text(
+                        user[index].name,
+                        style: GoogleFonts.openSans(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ],
+                  );
+                }),
+          ),
         ],
-      ),
-    );
-  }
-
-  Widget testContainer(Color color, String title) {
-    return FittedBox(
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
-          borderRadius: BorderRadius.circular(30),
-        ),
-        child: Row(
-          children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 2, vertical: 2),
-              child: CircleAvatar(
-                backgroundColor: color,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-              child: Text(title),
-            ),
-          ],
-        ),
       ),
     );
   }
