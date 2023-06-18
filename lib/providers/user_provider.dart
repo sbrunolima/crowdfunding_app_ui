@@ -7,8 +7,8 @@ import '../objects/suporters.dart';
 import '../objects/user.dart';
 
 class UserProvider with ChangeNotifier {
-  List<User> _user = [
-    User(
+  final List<UserData> _user = [
+    UserData(
       name: "Ziskaee",
       userImageUrl:
           "https://wallpapers.com/images/hd/cute-anime-profile-pictures-0lifptfs0jd9fml3.jpg",
@@ -19,15 +19,15 @@ class UserProvider with ChangeNotifier {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       userFollowers: 1.2,
       userRewards: 12,
-      donationGoal: 4000,
-      donationRecenved: 2600,
+      donationGoal: 2000,
+      donationRecenved: 100,
       userSuporters: [
         "https://i.pinimg.com/236x/74/35/7a/74357a7ec9e919acb58c1cdd2b052434.jpg",
         "https://images.saatchiart.com/saatchi/1755977/art/8291898/7356904-HSC00002-7.jpg",
         "https://image.lexica.art/full_jpg/19f280a2-2b97-4be2-b782-1fd5c70b84f4",
       ],
     ),
-    User(
+    UserData(
       name: "Nitorissa",
       userImageUrl:
           "https://thypix.com/wp-content/uploads/2021/10/anime-avatar-profile-picture-thypix-62-700x700.jpg",
@@ -46,7 +46,7 @@ class UserProvider with ChangeNotifier {
         "https://image.lexica.art/full_jpg/19f280a2-2b97-4be2-b782-1fd5c70b84f4",
       ],
     ),
-    User(
+    UserData(
       name: "Nana",
       userImageUrl:
           "https://aniyuki.com/wp-content/uploads/2022/06/aniyuki-anime-profile-picture-1.jpg",
@@ -56,15 +56,15 @@ class UserProvider with ChangeNotifier {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       userFollowers: 1.2,
       userRewards: 12,
-      donationGoal: 4000,
-      donationRecenved: 2600,
+      donationGoal: 7000,
+      donationRecenved: 3000,
       userSuporters: [
         "https://i.pinimg.com/236x/74/35/7a/74357a7ec9e919acb58c1cdd2b052434.jpg",
         "https://images.saatchiart.com/saatchi/1755977/art/8291898/7356904-HSC00002-7.jpg",
         "https://image.lexica.art/full_jpg/19f280a2-2b97-4be2-b782-1fd5c70b84f4",
       ],
     ),
-    User(
+    UserData(
       name: "Amerina",
       userImageUrl:
           "https://i.pinimg.com/736x/f8/dd/7e/f8dd7e6fe9a25062c3f99912a650e0f9.jpg",
@@ -76,14 +76,14 @@ class UserProvider with ChangeNotifier {
       userFollowers: 1.2,
       userRewards: 12,
       donationGoal: 4000,
-      donationRecenved: 2600,
+      donationRecenved: 1500,
       userSuporters: [
         "https://i.pinimg.com/236x/74/35/7a/74357a7ec9e919acb58c1cdd2b052434.jpg",
         "https://images.saatchiart.com/saatchi/1755977/art/8291898/7356904-HSC00002-7.jpg",
         "https://image.lexica.art/full_jpg/19f280a2-2b97-4be2-b782-1fd5c70b84f4",
       ],
     ),
-    User(
+    UserData(
       name: "Dunie",
       userImageUrl:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMkzaL6a_d-UWOOmF4t-jD8cqb1hg3PSA8Fg&usqp=CAU",
@@ -94,7 +94,7 @@ class UserProvider with ChangeNotifier {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       userFollowers: 1.2,
       userRewards: 12,
-      donationGoal: 4000,
+      donationGoal: 3000,
       donationRecenved: 2600,
       userSuporters: [
         "https://i.pinimg.com/236x/74/35/7a/74357a7ec9e919acb58c1cdd2b052434.jpg",
@@ -102,7 +102,7 @@ class UserProvider with ChangeNotifier {
         "https://image.lexica.art/full_jpg/19f280a2-2b97-4be2-b782-1fd5c70b84f4",
       ],
     ),
-    User(
+    UserData(
       name: "Bino",
       userImageUrl:
           "https://www.blindertech.com/wp-content/uploads/2022/07/Anime-Profile-Pictures.webp",
@@ -114,14 +114,14 @@ class UserProvider with ChangeNotifier {
       userFollowers: 1.2,
       userRewards: 12,
       donationGoal: 4000,
-      donationRecenved: 2600,
+      donationRecenved: 100,
       userSuporters: [
         "https://i.pinimg.com/236x/74/35/7a/74357a7ec9e919acb58c1cdd2b052434.jpg",
         "https://images.saatchiart.com/saatchi/1755977/art/8291898/7356904-HSC00002-7.jpg",
         "https://image.lexica.art/full_jpg/19f280a2-2b97-4be2-b782-1fd5c70b84f4",
       ],
     ),
-    User(
+    UserData(
       name: "Mairie",
       userImageUrl:
           "https://i.etsystatic.com/35745892/r/il/9ee986/4020922215/il_fullxfull.4020922215_mr1h.jpg",
@@ -132,15 +132,15 @@ class UserProvider with ChangeNotifier {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       userFollowers: 1.2,
       userRewards: 12,
-      donationGoal: 4000,
-      donationRecenved: 2600,
+      donationGoal: 1000,
+      donationRecenved: 1000,
       userSuporters: [
         "https://i.pinimg.com/236x/74/35/7a/74357a7ec9e919acb58c1cdd2b052434.jpg",
         "https://images.saatchiart.com/saatchi/1755977/art/8291898/7356904-HSC00002-7.jpg",
         "https://image.lexica.art/full_jpg/19f280a2-2b97-4be2-b782-1fd5c70b84f4",
       ],
     ),
-    User(
+    UserData(
       name: "Viki",
       userImageUrl:
           "https://i.etsystatic.com/35745892/r/il/dc5af5/4391170904/il_570xN.4391170904_sva8.jpg",
@@ -151,8 +151,8 @@ class UserProvider with ChangeNotifier {
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
       userFollowers: 1.2,
       userRewards: 12,
-      donationGoal: 4000,
-      donationRecenved: 2600,
+      donationGoal: 800,
+      donationRecenved: 600,
       userSuporters: [
         "https://i.pinimg.com/236x/74/35/7a/74357a7ec9e919acb58c1cdd2b052434.jpg",
         "https://images.saatchiart.com/saatchi/1755977/art/8291898/7356904-HSC00002-7.jpg",
@@ -161,7 +161,7 @@ class UserProvider with ChangeNotifier {
     ),
   ];
 
-  List<User> get user {
+  List<UserData> get user {
     return [..._user];
   }
 }

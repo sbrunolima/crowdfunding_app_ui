@@ -1,4 +1,4 @@
-class User {
+class UserData {
   final String name;
   final String userImageUrl;
   final String userBannerUrl;
@@ -10,7 +10,7 @@ class User {
   final double donationRecenved;
   final List<String> userSuporters;
 
-  User({
+  UserData({
     required this.name,
     required this.userImageUrl,
     required this.userBannerUrl,
