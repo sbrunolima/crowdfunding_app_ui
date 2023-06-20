@@ -4,7 +4,7 @@ import 'dart:convert';
 
 //Objects
 import '../objects/suporters.dart';
-import '../objects/user.dart';
+import '../objects/user_data.dart';
 
 class UserProvider with ChangeNotifier {
   final List<UserData> _user = [
@@ -20,7 +20,7 @@ class UserProvider with ChangeNotifier {
       userFollowers: 1.2,
       userRewards: 12,
       donationGoal: 2000,
-      donationRecenved: 100,
+      donationRecenved: 10000,
       userSuporters: [
         "https://i.pinimg.com/236x/74/35/7a/74357a7ec9e919acb58c1cdd2b052434.jpg",
         "https://images.saatchiart.com/saatchi/1755977/art/8291898/7356904-HSC00002-7.jpg",
@@ -152,7 +152,7 @@ class UserProvider with ChangeNotifier {
       userFollowers: 1.2,
       userRewards: 12,
       donationGoal: 800,
-      donationRecenved: 600,
+      donationRecenved: 1000,
       userSuporters: [
         "https://i.pinimg.com/236x/74/35/7a/74357a7ec9e919acb58c1cdd2b052434.jpg",
         "https://images.saatchiart.com/saatchi/1755977/art/8291898/7356904-HSC00002-7.jpg",

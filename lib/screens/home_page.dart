@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 //Widgets
 import '../home_page/categories_container.dart';
 import '../home_page/top_user_list.dart';
+import '../home_page/donation_bar.dart';
 
 //Providers
 import '../providers/user_provider.dart';
@@ -174,115 +175,7 @@ class HomePage extends StatelessWidget {
                             const SizedBox(height: 15),
 
                             //User Banner
-                            SizedBox(
-                              child: Stack(
-                                children: [
-                                  ClipRRect(
-                                    borderRadius: BorderRadius.circular(12),
-                                    child: Image.network(
-                                      user[index].userBannerUrl,
-                                      height: 200,
-                                      width: MediaQuery.of(context).size.width,
-                                      fit: BoxFit.cover,
-                                    ),
-                                  ),
-                                  //Objective banners
-                                  Positioned(
-                                    bottom: 0,
-                                    child: Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: Container(
-                                        height: 90,
-                                        width:
-                                            MediaQuery.of(context).size.width -
-                                                76,
-                                        decoration: BoxDecoration(
-                                          border: Border.all(
-                                              color: Colors.transparent),
-                                          borderRadius:
-                                              BorderRadius.circular(10),
-                                          color: Colors.white,
-                                        ),
-                                        child: Column(
-                                          children: [
-                                            Padding(
-                                              padding:
-                                                  const EdgeInsets.all(8.0),
-                                              child: Row(
-                                                mainAxisAlignment:
-                                                    MainAxisAlignment
-                                                        .spaceBetween,
-                                                children: [
-                                                  //Objective / Percentage
-                                                  Column(
-                                                    crossAxisAlignment:
-                                                        CrossAxisAlignment
-                                                            .start,
-                                                    children: [
-                                                      Text(
-                                                        'Dream PC',
-                                                        style: GoogleFonts
-                                                            .openSans(
-                                                          fontSize: 18,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                                      ),
-                                                      const SizedBox(height: 5),
-                                                      percentText(
-                                                        user[index].donationGoal >
-                                                                user[index]
-                                                                    .donationRecenved
-                                                            ? (((user[index].donationGoal -
-                                                                            user[index]
-                                                                                .donationRecenved) /
-                                                                        user[index]
-                                                                            .donationGoal) *
-                                                                    100)
-                                                                .toStringAsFixed(
-                                                                    0)
-                                                            : '100',
-                                                      ),
-                                                    ],
-                                                  ),
-                                                  //Raised / Goal
-                                                  raisedGoal(
-                                                    'Raised',
-                                                    user[index]
-                                                        .donationRecenved
-                                                        .toStringAsFixed(0),
-                                                  ),
-                                                  raisedGoal(
-                                                    'Goals',
-                                                    user[index]
-                                                        .donationGoal
-                                                        .toStringAsFixed(0),
-                                                  ),
-                                                ],
-                                              ),
-                                            ),
-                                            LinearPercentIndicator(
-                                              width: mediaQuery.width - 80,
-                                              lineHeight: 8.0,
-                                              percent: 1 -
-                                                  ((user[index].donationGoal -
-                                                          user[index]
-                                                              .donationRecenved) /
-                                                      user[index].donationGoal),
-                                              backgroundColor:
-                                                  Colors.grey.shade300,
-                                              progressColor: Colors.green,
-                                              barRadius:
-                                                  const Radius.circular(16),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
+                            DonationBar(user: user[index]),
                             const SizedBox(height: 10),
                             Container(
                               height: 100,
@@ -343,41 +236,6 @@ class HomePage extends StatelessWidget {
             ],
           ),
         ],
-      ),
-    );
-  }
-
-  Widget raisedGoal(String title, String valor) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: GoogleFonts.openSans(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-            color: Colors.grey,
-          ),
-        ),
-        const SizedBox(height: 5),
-        Text(
-          '\$${valor}',
-          style: GoogleFonts.openSans(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-            color: Colors.black,
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget percentText(String percent) {
-    return Text(
-      '${percent}%',
-      style: GoogleFonts.openSans(
-        fontSize: 18,
-        fontWeight: FontWeight.w500,
-        color: Colors.green,
       ),
     );
   }
