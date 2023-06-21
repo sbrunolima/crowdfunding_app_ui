@@ -16,7 +16,6 @@ class DonationBar extends StatefulWidget {
 }
 
 class _DonationBarState extends State<DonationBar> {
-  double _percent = 0;
   double _percentBar = 0;
   String _percentText = '';
   var _isInit = true;
@@ -25,34 +24,68 @@ class _DonationBarState extends State<DonationBar> {
   void initState() {
     super.initState();
 
-    double _donationGoal = widget.user.donationGoal;
-    double _donationRecenved = widget.user.donationRecenved;
+    double donationGoal = widget.user.donationGoal;
+    double donationReceived = widget.user.donationRecenved;
 
     if (_isInit) {
-      if (_donationGoal > _donationRecenved) {
-        _percent = ((_donationGoal - _donationRecenved) / _donationGoal) * 100;
-
-        _percentBar = ((_donationGoal - _donationRecenved) / _donationGoal);
-
-        _percentText = (100 - _percent).toStringAsFixed(0);
-      }
-
-      if (_donationGoal == _donationRecenved) {
-        _percentBar = 1;
-
-        _percentText = '100';
-      }
-
-      if (_donationGoal < _donationRecenved) {
-        _percent = ((_donationGoal + _donationRecenved) / _donationGoal) * 100;
-
-        _percentBar = 1;
-
-        _percentText = (_percent - 100).toStringAsFixed(0);
-      }
+      _percentText = returnedPercentText(
+        donationGoal: donationGoal,
+        donationRecenved: donationReceived,
+      );
+      _percentBar = returnedPercentBar(
+        donationGoal: donationGoal,
+        donationRecenved: donationReceived,
+      );
     }
 
     _isInit = false;
+  }
+
+  //Return the percent TEXT
+  String returnedPercentText(
+      {required double donationGoal, required double donationRecenved}) {
+    //Text to be returned
+    String textToReturn = '';
+    double percent = 0;
+
+    if (donationGoal > donationRecenved) {
+      percent = ((donationGoal - donationRecenved) / donationGoal) * 100;
+
+      textToReturn = (100 - percent).toStringAsFixed(0);
+    }
+
+    if (donationGoal == donationRecenved) {
+      textToReturn = '100';
+    }
+
+    if (donationGoal < donationRecenved) {
+      percent = ((donationGoal + donationRecenved) / donationGoal) * 100;
+
+      textToReturn = (percent - 100).toStringAsFixed(0);
+    }
+
+    return textToReturn;
+  }
+
+  //Return the percent BAR
+  double returnedPercentBar(
+      {required double donationGoal, required double donationRecenved}) {
+    //Text to be returned
+    double percentToReturn = 0;
+
+    if (donationGoal > donationRecenved) {
+      percentToReturn = ((donationGoal - donationRecenved) / donationGoal);
+    }
+
+    if (donationGoal == donationRecenved) {
+      percentToReturn = 1;
+    }
+
+    if (donationGoal < donationRecenved) {
+      percentToReturn = 1;
+    }
+
+    return percentToReturn;
   }
 
   @override
