@@ -23,8 +23,9 @@ class HomePage extends StatelessWidget {
     final user = userData.user;
 
     return Scaffold(
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(0, 0, 0, 0),
+        backgroundColor: Colors.grey.shade200,
         elevation: 0,
         title: UserProfile(),
         actions: const [

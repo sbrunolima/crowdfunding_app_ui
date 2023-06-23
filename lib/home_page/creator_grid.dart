@@ -37,9 +37,6 @@ class _CreatorGridState extends State<CreatorGrid> {
         //Return a card with the user data
         return Card(
           elevation: 0,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Column(
