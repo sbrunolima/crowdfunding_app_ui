@@ -6,16 +6,16 @@ import 'package:provider/provider.dart';
 //Objects
 import '../objects/user_data.dart';
 
-class DonationBar extends StatefulWidget {
+class HomeDonationCard extends StatefulWidget {
   final UserData user;
 
-  DonationBar({required this.user});
+  HomeDonationCard({required this.user});
 
   @override
-  State<DonationBar> createState() => _DonationBarState();
+  State<HomeDonationCard> createState() => _HomeDonationCardState();
 }
 
-class _DonationBarState extends State<DonationBar> {
+class _HomeDonationCardState extends State<HomeDonationCard> {
   double _percentBar = 0;
   String _percentText = '';
   var _isInit = true;

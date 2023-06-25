@@ -11,8 +11,8 @@ import '../screens/profile_page.dart';
 import '../providers/user_provider.dart';
 
 //Widgets
-import '../home_page/donation_bar.dart';
-import '../home_page/share_support_buttons.dart';
+import 'home_donation_card.dart';
+import 'home_share_support_buttons.dart';
 import '../home_page/card_profile_data.dart';
 
 class CreatorGrid extends StatefulWidget {
@@ -37,6 +37,9 @@ class _CreatorGridState extends State<CreatorGrid> {
         //Return a card with the user data
         return Card(
           elevation: 0,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
             child: Column(
@@ -62,14 +65,14 @@ class _CreatorGridState extends State<CreatorGrid> {
                         //.........................................
                         const SizedBox(height: 15),
                         //User Banner
-                        DonationBar(user: user[index]),
+                        HomeDonationCard(user: user[index]),
                       ],
                     ),
                   ),
                 ),
                 const SizedBox(height: 10),
                 //Share / Support Button
-                ShareSupportButtons(user: user[index]),
+                HomeShareSupportButtons(user: user[index]),
               ],
             ),
           ),

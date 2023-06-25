@@ -8,8 +8,8 @@ import 'package:provider/provider.dart';
 import '../providers/user_provider.dart';
 
 //Widgets
-import '../home_page/donation_bar.dart';
-import 'share_support_buttons.dart';
+import '../home_page/home_donation_card.dart';
+import 'home_share_support_buttons.dart';
 
 //Objects
 import '../objects/user_data.dart';

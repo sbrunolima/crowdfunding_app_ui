@@ -6,14 +6,15 @@ import 'package:provider/provider.dart';
 
 //Screens
 import '../screens/profile_page.dart';
+import '../screens/support_page.dart';
 
 //Objects
 import '../objects/user_data.dart';
 
-class ShareSupportButtons extends StatelessWidget {
+class HomeShareSupportButtons extends StatelessWidget {
   final UserData user;
 
-  ShareSupportButtons({required this.user});
+  HomeShareSupportButtons({required this.user});
 
   @override
   Widget build(BuildContext context) {
@@ -68,11 +69,16 @@ class ShareSupportButtons extends StatelessWidget {
                 ),
               ),
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => ProfilePage(
-                      user: user,
+                showModalBottomSheet(
+                  context: context,
+                  isScrollControlled: true,
+                  shape: const RoundedRectangleBorder(
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(10),
                     ),
+                  ),
+                  builder: (context) => SupportPage(
+                    user: user,
                   ),
                 );
               },
