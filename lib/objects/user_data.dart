@@ -1,4 +1,5 @@
 class UserData {
+  final String id;
   final String name;
   final String userImageUrl;
   final String userBannerUrl;
@@ -11,6 +12,7 @@ class UserData {
   final List<String> userSuporters;
 
   UserData({
+    required this.id,
     required this.name,
     required this.userImageUrl,
     required this.userBannerUrl,

@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 
 //Screens
 import './screens/home_page.dart';
+import './screens/profile_page.dart';
 
 //Providers
 import './providers/user_provider.dart';
@@ -28,6 +29,9 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
         ),
         home: HomePage(),
+        routes: {
+          HomePage.routeName: (ctx) => HomePage(),
+        },
       ),
     );
   }

@@ -12,16 +12,26 @@ import '../home_page/user_profile.dart';
 //Providers
 import '../providers/user_provider.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
+  //Page route
+  static const routeName = '/home-page';
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  var _isInit = true;
+
+  @override
+  void initState() {
+    super.initState();
+
+    Provider.of<UserProvider>(context, listen: false).LoadUsers();
+  }
+
   @override
   Widget build(BuildContext context) {
-    //Get the device Size
-    final mediaQuery = MediaQuery.of(context).size;
-
-    //Load all user data
-    final userData = Provider.of<UserProvider>(context, listen: false);
-    final user = userData.user;
-
     return Scaffold(
       backgroundColor: Colors.grey.shade100,
       appBar: AppBar(

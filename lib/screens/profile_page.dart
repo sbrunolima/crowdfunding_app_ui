@@ -15,6 +15,8 @@ import '../profile_page/profile_share_support_buttons.dart';
 import '../widgets/my_back_button.dart';
 
 class ProfilePage extends StatefulWidget {
+  //Page route
+  static const routeName = '/profile-page';
   final UserData user;
 
   ProfilePage({required this.user});

@@ -79,6 +79,7 @@ class ProfileShareSupportButtons extends StatelessWidget {
                   ),
                   builder: (context) => SupportPage(
                     user: user,
+                    pageID: 'profile',
                   ),
                 );
               },

@@ -79,6 +79,7 @@ class HomeShareSupportButtons extends StatelessWidget {
                   ),
                   builder: (context) => SupportPage(
                     user: user,
+                    pageID: 'home',
                   ),
                 );
               },

@@ -9,12 +9,14 @@ import '../objects/user_data.dart';
 
 //Widgets
 import '../support_page/support_donations_card.dart';
-import '../widgets/my_back_button.dart';
+import '../support_page/support_appbar.dart';
+import '../support_page/donnation_ammout.dart';
 
 class SupportPage extends StatefulWidget {
   final UserData user;
+  final String pageID;
 
-  SupportPage({required this.user});
+  SupportPage({required this.user, required this.pageID});
 
   @override
   State<SupportPage> createState() => _SupportPageState();
@@ -23,46 +25,43 @@ class SupportPage extends StatefulWidget {
 class _SupportPageState extends State<SupportPage> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(15.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          //APP BAR
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              MyBackIcon(),
-              Text(
-                'Supports',
-                style: GoogleFonts.openSans(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.black,
-                ),
-              ),
-              const Icon(
-                Icons.more_horiz_outlined,
-                color: Colors.black,
-                size: 26,
-              ),
-            ],
-          ),
-          const SizedBox(height: 20),
-          //Creator GOAL CARD
-          Text(
-            'Creator Goal',
-            style: GoogleFonts.openSans(
-              fontSize: 20,
-              fontWeight: FontWeight.w600,
-              color: Colors.black,
+    //Const SizedBox
+    const sizedBox = SizedBox(height: 20);
+    const sizedBox1 = SizedBox(height: 30);
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            //APP BAR
+            SupportAppBar(),
+            sizedBox,
+            //Creator TITLE
+            creatorRirle(),
+            sizedBox,
+            //Creator GOAL CARD
+            SupportDonationCard(user: widget.user),
+            //Donation ammount
+            sizedBox1,
+            DonnationAmmount(
+              user: widget.user,
+              pageID: widget.pageID,
             ),
-          ),
-          const SizedBox(height: 20),
-          //Creator GOAL CARD
-          SupportDonationCard(user: widget.user),
-        ],
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget creatorRirle() {
+    return Text(
+      'Creator Goal',
+      style: GoogleFonts.openSans(
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+        color: Colors.black,
       ),
     );
   }
