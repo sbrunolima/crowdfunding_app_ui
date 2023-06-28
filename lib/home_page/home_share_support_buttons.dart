@@ -25,7 +25,7 @@ class HomeShareSupportButtons extends StatelessWidget {
         children: [
           SizedBox(
             height: 45,
-            width: 150,
+            width: 140,
             child: OutlinedButton(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -58,7 +58,7 @@ class HomeShareSupportButtons extends StatelessWidget {
           ),
           SizedBox(
             height: 45,
-            width: 150,
+            width: 140,
             child: OutlinedButton(
               child: Text(
                 'Support',

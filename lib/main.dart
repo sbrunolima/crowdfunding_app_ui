@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 
 //Screens
 import './screens/home_page.dart';
-import './screens/profile_page.dart';
+import './screens/start_page.dart';
 
 //Providers
 import './providers/user_provider.dart';
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: HomePage(),
+        home: StartPage(),
         routes: {
           HomePage.routeName: (ctx) => HomePage(),
         },

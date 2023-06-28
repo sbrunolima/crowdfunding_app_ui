@@ -63,13 +63,25 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 children: [
                   CategoriesContainer(
-                      color: Colors.yellow, title: 'Cosplayer', isActive: true),
+                    imageURL: 'assets/ninja.png',
+                    title: 'Cosplayer',
+                    isActive: true,
+                  ),
                   CategoriesContainer(
-                      color: Colors.red, title: 'Streamer', isActive: false),
+                    imageURL: 'assets/joystick.png',
+                    title: 'Streamer',
+                    isActive: false,
+                  ),
                   CategoriesContainer(
-                      color: Colors.blue, title: 'Movies', isActive: false),
+                    imageURL: 'assets/movie.png',
+                    title: 'Movies',
+                    isActive: false,
+                  ),
                   CategoriesContainer(
-                      color: Colors.blue, title: 'Cosplay', isActive: false),
+                    imageURL: 'assets/anime.png',
+                    title: 'Anime',
+                    isActive: false,
+                  ),
                 ],
               ),
             ),

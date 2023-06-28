@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoriesContainer extends StatelessWidget {
-  final Color color;
+  final String imageURL;
   final String title;
   final bool isActive;
 
   CategoriesContainer({
-    required this.color,
+    required this.imageURL,
     required this.title,
     required this.isActive,
   });
@@ -29,7 +29,12 @@ class CategoriesContainer extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 2),
                 child: CircleAvatar(
-                  backgroundColor: color,
+                  backgroundColor: Colors.white,
+                  child: Image.asset(
+                    imageURL,
+                    height: 25,
+                    width: 25,
+                  ),
                 ),
               ),
               Padding(
